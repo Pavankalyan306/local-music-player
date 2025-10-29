@@ -1,5 +1,4 @@
 
----
 # 🎧 Local Music Streaming App  
 A simple Spotify-like web music player built using **React (Frontend)** and **Flask (Backend)**.  
 It scans local music files, extracts metadata using **Mutagen**, and streams audio to the browser.
@@ -39,13 +38,37 @@ project/
 
 ---
 
+## 🧩 Architecture Flow
+
+```mermaid
+flowchart TD
+    %% User Interaction
+    A["🎶 User Opens App"] --> B["📡 Fetch Track List from Flask API"]
+
+    %% Music Data Handling
+    B --> C["🧠 Search & Filter Tracks"]
+    C --> D["▶ Select Track to Play"]
+
+    %% Audio Stream
+    D --> E["🔊 React Audio Player"]
+    E --> F["🌐 Streams via /stream/<file> from Flask"]
+    F --> G["📁 Audio Files in /music Directory"]
+
+    %% Metadata
+    B --> H["🔍 Flask scans metadata using Mutagen"]
+````
+
+---
+
 ## 🚀 Setup & Run
 
 ### 1. Backend
+
 Install Python dependencies:
+
 ```bash
 pip install flask flask-cors mutagen
-````
+```
 
 Start Flask:
 
@@ -54,13 +77,13 @@ cd backend
 python app.py
 ```
 
-This runs server at:
+Backend runs at:
 
 ```
 http://localhost:5000
 ```
 
-Place your audio files inside:
+Add your audio files to:
 
 ```
 backend/music/
@@ -76,19 +99,17 @@ Install dependencies:
 npm install
 ```
 
-Run development:
+Run dev server:
 
 ```bash
 npm run dev
 ```
 
-Visit:
+Frontend runs at:
 
 ```
 http://localhost:5173
 ```
-
-(or whatever port Vite uses)
 
 ---
 
@@ -100,11 +121,12 @@ http://localhost:5173
 
 ## 🔮 Future Improvements
 
-* Real album artwork from metadata
+* Real album artwork from embedded metadata
 * Playlists & favorites
+* Mobile improvements
+* Smart shuffle
 * Waveform progress bar
-* Mobile-friendly enhancements
-* Hotkeys: space to play/pause
+* Keyboard shortcuts
 
 ---
 
@@ -117,4 +139,5 @@ MIT License. Modify, remix, and make it rock.
 Made with ❤️, caffeine, and a folder of MP3 dreams.
 
 ```
+
 
