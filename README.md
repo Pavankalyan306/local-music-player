@@ -115,7 +115,8 @@ http://localhost:5173
 
 ## 🎨 Screenshots
 
-(Add screenshots here when ready!)
+<img width="1920" height="656" alt="Capture" src="https://github.com/user-attachments/assets/6d565064-91b5-4b9c-8cb7-150a9fb56d7b" />
+
 
 ---
 
